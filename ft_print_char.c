@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: johnbosco <johnbosco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 15:31:31 by jtorrez-          #+#    #+#             */
-/*   Updated: 2023/06/05 17:33:28 by johnbosco        ###   ########.fr       */
+/*   Created: 2023/06/05 13:31:14 by johnbosco         #+#    #+#             */
+/*   Updated: 2023/06/05 17:33:33 by johnbosco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+/* The reason for returning 1 in this case is to indicate 
+the number of characters written successfully.*/
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdio.h>
+#include	"ft_printf.h"
 
-int	ft_printf(const char *s, ...);
-int	ft_print_char(char c);
-int ft_print_str(char *str);
-char	*ft_strchr(const char *s, int c);
-#endif
+int	ft_print_char(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
