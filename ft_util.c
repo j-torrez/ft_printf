@@ -6,10 +6,11 @@
 /*   By: johnbosco <johnbosco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 17:18:33 by johnbosco         #+#    #+#             */
-/*   Updated: 2023/06/05 18:34:13 by johnbosco        ###   ########.fr       */
+/*   Updated: 2023/06/08 23:40:21 by johnbosco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*Norm error fix*/
 #include "ft_printf.h"
 
 char	*ft_strchr(const char *s, int c)
