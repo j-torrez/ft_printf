@@ -52,7 +52,7 @@ int ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	char str[] = "Hello World";
+	char str[] ="Hello World";
 	int result; 
 
 	result = ft_printf("%s\n", str);
