@@ -6,7 +6,7 @@
 /*   By: johnbosco <johnbosco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 15:30:53 by jtorrez-          #+#    #+#             */
-/*   Updated: 2023/06/05 18:29:29 by johnbosco        ###   ########.fr       */
+/*   Updated: 2023/06/14 15:45:00 by johnbosco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int ft_cases(va_list args, const char format)
 		return(ft_print_char(va_arg(args, int)));
 	else if (format == 's')
 		return(ft_print_str(va_arg(args, char *)));
+	else if (format == 'd' || format == 'i')
+		return (ft_print_int(va_arg(args, int)));
 	else
 		return(-1);
 }
@@ -34,7 +36,7 @@ int ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[i])
 	{
-		if (str[i] == '%' && ft_strchr("cs", str[i + 1]) != NULL)
+		if (str[i] == '%' && ft_strchr("csd", str[i + 1]) != NULL)
 		{
 			total_print_len += ft_cases(args, str[i + 1]);
 			i++;
@@ -52,11 +54,16 @@ int ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	char str[] ="Hello World";
-	int result; 
+	// char str[] ="Hello World";
+	int number = 12345;
+	int result;
+	int result1; 
 
-	result = ft_printf("%s\n", str);
-	printf("Numbers of bytes: %d\n", result);
+	result = ft_printf("My implementation: %d\n", number);
+	printf("My implementation: Numbers of bytes: %d\n", result);
+
+	result1 = printf("Oringinal Printf result: %d\n", number);
+	printf("Original count character printf: %d\n", result);
 	return 0;
 }
 
