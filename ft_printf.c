@@ -6,52 +6,54 @@
 /*   By: johnbosco <johnbosco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 15:30:53 by jtorrez-          #+#    #+#             */
-/*   Updated: 2023/06/14 15:45:00 by johnbosco        ###   ########.fr       */
+/*   Updated: 2023/06/14 17:19:24 by johnbosco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-static int ft_cases(va_list args, const char format)
+static int ft_cases( const char format, va_list args)
 {
 	if (format == 'c')
-		return(ft_print_char(va_arg(args, int)));
+		return (ft_putchar(va_arg(args, int)));
 	else if (format == 's')
-		return(ft_print_str(va_arg(args, char *)));
+		return (ft_putstr(va_arg(args, char *)));
+	else if (format == 'p')
+		return (ft_pointer(va_arg(args, unsigned long)));
 	else if (format == 'd' || format == 'i')
-		return (ft_print_int(va_arg(args, int)));
-	else
-		return(-1);
+		return (ft_putnbr(va_arg(args, int)));
+	else if (format == 'u')
+		return (ft_putunbr(va_arg(args, unsigned int)));
+	else if (format == 'x')
+		return (ft_hexlower(va_arg(args, int)));
+	else if (format == 'X')
+		return (ft_hexupper(va_arg(args, int)));
+	else if (format == '%')
+		return (ft_putchar('%'));
+	return (0);
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *format, ...)
 {
-	int	i; 
-	va_list args;
-	int total_print_len;
+	va_list	arg;
+	int		i;
+	int		count;
 
+	va_start(arg, format);
 	i = 0;
-	total_print_len = 0;
-	va_start(args, str);
-	while (str[i])
+	count = 0;
+	while (format[i])
 	{
-		if (str[i] == '%' && ft_strchr("csd", str[i + 1]) != NULL)
-		{
-			total_print_len += ft_cases(args, str[i + 1]);
-			i++;
-		}
+		if (format[i] == '%')
+			count += ft_cases(format[++i], arg);
 		else
-		{
-			total_print_len += ft_print_char(str[i]);
-		}
+			count += ft_putchar(format[i]);
 		i++;
 	}
-	va_end(args);
-	return (total_print_len);
- 
-}	
-
+	va_end(arg);
+	return (count);
+}
+/*
 int	main(void)
 {
 	// char str[] ="Hello World";
@@ -65,5 +67,5 @@ int	main(void)
 	result1 = printf("Oringinal Printf result: %d\n", number);
 	printf("Original count character printf: %d\n", result);
 	return 0;
-}
+}	*/
 
