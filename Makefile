@@ -3,38 +3,36 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: johnbosco <johnbosco@student.42.fr>        +#+  +:+       +#+         #
+#    By: jtorrez- <jtorrez-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 16:00:09 by johnbosco         #+#    #+#              #
-#    Updated: 2023/06/14 17:12:38 by johnbosco        ###   ########.fr        #
+#    Updated: 2023/06/15 16:34:29 by jtorrez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=libftprintf.a
-LIBFT=libft/libft.a
+NAME = libftprintf.a
 
-SRCS=ft_printf.c ft_util.c ft_print_char.c ft_print_hexa.c ft_print_int.c
-OBJS=$(SRCS:.c=.o)
+SRCS = ft_printf.c ft_print_char.c ft_print_hexa.c ft_print_int.c
 
+OBJS = ${SRCS:.c=.o}
 
-CC=gcc
-CFLAGS=-Wall -Wextra -Werror
+CC = gcc
+RM = rm -f
 
+FLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+.c.o:
+	${CC} ${FLAGS} -g -c $< -o ${<:.c=.o}
 
-$(NAME): $(OBJS)
-	make bonus -C ./libft
-	cp libft/libft.a $(NAME)
-	ar rcs $@ $(OBJS)
+$(NAME): ${OBJS}
+	ar rcs ${NAME} ${OBJS}
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $^
+all: ${NAME}
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
+	${RM} ${OBJS}
 
 fclean: clean
-	rm -f $(NAME)
+	${RM} ${NAME}
 
 re: fclean all

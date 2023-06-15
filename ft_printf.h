@@ -6,7 +6,7 @@
 /*   By: jtorrez- <jtorrez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 15:31:31 by jtorrez-          #+#    #+#             */
-/*   Updated: 2023/06/15 15:06:09 by jtorrez-         ###   ########.fr       */
+/*   Updated: 2023/06/15 16:37:46 by jtorrez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "./libft/libft.h"
 # include <unistd.h>
-# include <stdio.h>
+# include <stdlib.h>
 
 int		ft_printf(const char *format, ...);
 int		ft_putchar(char c);
