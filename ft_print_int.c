@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnbosco <johnbosco@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jtorrez- <jtorrez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 17:33:32 by johnbosco         #+#    #+#             */
-/*   Updated: 2023/06/14 17:06:37 by johnbosco        ###   ########.fr       */
+/*   Updated: 2023/06/15 15:00:43 by jtorrez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@
 	}
 	return count;
 }	*/
-
-
 int	ft_putunbr(unsigned int nb)
 {
 	int	i;

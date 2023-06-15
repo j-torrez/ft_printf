@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnbosco <johnbosco@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jtorrez- <jtorrez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 15:30:53 by jtorrez-          #+#    #+#             */
-/*   Updated: 2023/06/14 17:19:24 by johnbosco        ###   ########.fr       */
+/*   Updated: 2023/06/15 15:14:25 by jtorrez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int ft_cases( const char format, va_list args)
+static int	ft_cases( const char format, va_list args)
 {
 	if (format == 'c')
 		return (ft_putchar(va_arg(args, int)));
@@ -68,4 +68,3 @@ int	main(void)
 	printf("Original count character printf: %d\n", result);
 	return 0;
 }	*/
-

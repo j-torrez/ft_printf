@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_hexa.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtorrez- <jtorrez-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/15 14:56:30 by jtorrez-          #+#    #+#             */
+/*   Updated: 2023/06/15 15:22:30 by jtorrez-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_hexlower(unsigned int nb)
@@ -44,6 +56,8 @@ int	ft_pointer(unsigned long ptr)
 	int	i;
 
 	i = 2;
+	if (!ptr)
+		return (ft_putstr("(nil)"));
 	ft_putchar('0');
 	ft_putchar('x');
 	i += ft_hexptr(ptr);
