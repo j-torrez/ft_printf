@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtorrez- <jtorrez-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: johnbosco <johnbosco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 17:33:32 by johnbosco         #+#    #+#             */
-/*   Updated: 2023/06/15 15:00:43 by jtorrez-         ###   ########.fr       */
+/*   Updated: 2023/06/20 23:40:57 by johnbosco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 		ft_print_char(num + 48);
 	}
 	return count;
+	Function tested in linux
 }	*/
 int	ft_putunbr(unsigned int nb)
 {
